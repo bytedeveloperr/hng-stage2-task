@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HNG Stage 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .v-120 {
+        height: 120vh !important;
+      }
+      .container {
+        width: 50% !important;
+      }
+
+      * {
+        font-size: 13px;
+      }
+    </style>
+</head>
+<body class="bg-dark">
+  <section class="container bg-white v-120 p-5">
+    <h5 class="text-uppercase mb-3 text-danger">Abdulrahman Yusuf</h5>
+
+    <hr />
+
+    <div class="row">
+      <section class="col-6">
+        <div class="contact mb-3">
+          <h5 class="fw-bold mb-3 text-danger"><i class="fa fa-address-book"></i> Contact</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fa fa-envelope me-3 text-danger"></i> abdulrahmanyusuf@gmail.com</li>
+            <li class="mb-2"><i class="fa fa-phone me-3 text-danger"></i> +2348135491935</li>
+            <li class="mb-2"><i class="fa fa-fa fa-map-marker me-3 text-danger"></i> 9, Isale Otta street, Agbado station Ogun state, Nigeria</li>
+          </ul>
+        </div>
+
+        <div class="techs mb-3">
+          <h5 class="fw-bold mb-3 text-danger"><i class="fa fa-cogs"></i> Technologies</h5>
+          <ul class="list">
+            <li>Node.js</li>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>GraphQL</li>
+            <li>Git</li>
+            <li>MongoDB</li>
+            <li>PostgreSQl</li>
+            <li>AWS</li>
+            <li>Blockchain (Ethereum, Waves, Bitcoin)</li>
+          </ul>
+        </div>
+
+        <div class="lang mb-3">
+          <h5 class="fw-bold mb-3 text-danger"><i class="fa fa-cogs"></i> Human language</h5>
+          <ul class="list">
+            <li>Yoruba</li>
+            <li>English</li>
+            <li>Arabic</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="col-6">
+        <div class="objective mb-3">
+          <h5 class="fw-bold mb-3 text-danger"><i class="fa fa-object-group"></i> Objective</h5>
+          <p class="">I am a passionate and experienced young software developer trained to build highly scalable and performant applications seeking employment with a fast-growing startup. I bring three years experience writing Node.js and more than five years experience in the technology industry</p>
+        </div>
+
+        <div class="experience mb-3">
+          <h5 class="fw-bold mb-3 text-danger"><i class="fa fa-briefcase"></i> Experience</h5>
+
+          <artice class="experiece-item">
+            <div class="d-flex justify-content-between">
+              <h6 class="fs-6 fw-bold">HNG Intenship</h6>
+              <span>May 2020 - August 2020</span>
+            </div>
+            <p>Backend Developer Intern</p>
+            <p>I worked with different category of people on a
+            number of products within three months of the internship
+            below are some of my achievements during the internship:</p>
+
+            <ul>
+              <li>Carried out day-day tasks accurately and efficiently.</li>
+              <li>Worked closely with diverse category of people with different technology stack to establish and deliver to highly performant services.</li>
+              <li>Worked on products during development until it was deployed for production.</li>
+              <li>Made it to the final stage of the internship</li>
+            </ul>
+          </artice>
+
+          <artice class="experiece-item">
+            <div class="d-flex justify-content-between">
+              <h6 class="fs-6 fw-bold">Qurulab</h6>
+              <span>Feb 2021 - currently</span>
+            </div>
+            <p>Backend & Blockchain Developer</p>
+            <p>I work at Qurulab as a backend and blockchain developer. I have built backend systems that have been used by thousands of people at Qurulab</p>
+
+            <ul>
+              <li>Built core functionalities of the Muna crypto savings App.</li>
+              <li>Built a p2p crypto trading community</li>
+              <li>Implemented crypto voucher system</li>
+              <li>Implemented BTC and USDN savings system</li>
+            </ul>
+          </artice>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <section class="row">
+      <form class="col-6 mx-auto" action="/process" method="POST">
+        <h5 class="text-uppercase fs-5 fw-bold mb-3">Contact Me</h5>
+        <div class="alert alert-success" style="display: none;"></div>
+        <input type="text" name="name" class="form-control mb-3" placeholder="Please enter your name" />
+        <input type="email" name="email" class="form-control mb-3" placeholder="Please enter your email" required/>
+        <textarea name="message" class="form-control mb-3" placeholder="Please enter your message" required></textarea>
+        <div class="d-grd">
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+      </form>
+    </section>
+  </section>
+
+  <script>
+    const q = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent("message").replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")
+    if(q.length !== 0) {
+      const al = document.querySelector(".alert")
+      al.classList.add("d-block")
+      al.textContent = decodeURIComponent(q)
+    }
+  </script>
+  <script src="https://use.fontawesome.com/d0c8454a49.js"></script>
+</body>
+</html>

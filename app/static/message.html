@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HNG STage 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .v-100 {
+        height: 100vh !important;
+      }
+      .container {
+        width: 50% !important;
+      }
+
+      * {
+        font-size: 13px;
+      }
+    </style>
+</head>
+<body class="bg-dark">
+  <section class="container bg-white v-100 p-5">
+    <h5 class="text-uppercase text-danger text-center fs-5"></h5>
+    <p class="lead content"></p>
+    <p class="sig"></p>
+  </section>
+
+  <script>
+    const id = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent("id").replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")
+    if(id.length !== 0) {
+      fetch(`/message?id=${id}`).then(res => res.json().then((data) => {
+        if (data.error) {
+          let div = document.createElement("div")
+          div.classList.add("alert", "alert-danger")
+          div.textContent = `Error: ${data.message}`
+
+          document.querySelector(".container").appendChild(div)
+        } else {
+          const h5 = document.querySelector("h5")
+          const content = document.querySelector(".content")
+          const sig = document.querySelector(".sig")
+
+          h5.textContent = `Message from ${data.name || data.email}`
+          content.textContent = data.message
+          sig.textContent = `${data.name ? data.name +', ' : ''} ${data.email}`
+        }
+      }))
+    }
+  </script>
+  <script src="https://use.fontawesome.com/d0c8454a49.js"></script>
+</body>
+</html>
