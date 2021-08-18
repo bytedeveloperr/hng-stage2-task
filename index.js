@@ -58,7 +58,7 @@ const mongo = new Mongo()
           await mail.send()
         }
 
-        res.redirect("/?message=Thank you for contacting me, please check you email.")
+        res.redirect("/?message=Thank you for contacting me, please check you email (also your spam folder).")
       }
     } catch (e) {
       res.status(500).send({ error: true, message: e.message || "An unkown error occured" })
