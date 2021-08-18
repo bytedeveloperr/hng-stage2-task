@@ -11,7 +11,7 @@ from scratch.
 
 [https://github.com/devYusuf/hng-stage2-task/blob/main/print.js](https://github.com/devYusuf/hng-stage2-task/blob/main/print.js)
 
-### Preview URL
+### Demo URL
 
 [https://hng-stage2-taksk.herokuapp.com/](https://hng-stage2-taksk.herokuapp.com/)
 
@@ -23,4 +23,7 @@ HNG internshp
 - Website: [https://internship.zuri.team](https://internship.zuri.team)
 
 ![Zuri Team](https://zuri.team/img/zuri-logo-full.svg)
+
+<hr />
+
 ![Ingressive4Good](https://ingressive.org/wp-content/uploads/2020/05/I4G-Logo-Color-Cropped.png)
